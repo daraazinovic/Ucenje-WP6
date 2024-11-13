@@ -4,7 +4,7 @@ go
 drop database if exists zoo;
 go
 
-create database if exists zoo;
+create database zoo;
 go
 
 use zoo;
@@ -12,25 +12,32 @@ go
 
 
 
-create table zivotinja(
-sifra int not null primary key(1,),
-vrsta varchar(50),not null,
-ime varchar(50), not null
-djelatnik int, not null
-prostorija int, not null
-datum int
-);
-
 create table djelatnik(
-sifra int,
-ime varchar(50),
-prezime varchar(50),
-iban varchar(50)
+sifra int not null primary key identity(1,1),
+ime varchar(50) not null,
+prezime varchar(50) not null,
+iban varchar(50) not null,
 );
 
 create table prostorija(
-sifra int,
-dimenzije varchar(30),
-maksbroj int,
-mjesto varchar(30)
+sifra int not null primary key identity(1,1),
+dimenzije varchar(30) not null,
+maksbroj int not null,
+mjesto varchar(30) not null
+);
+
+create table datum(
+sifra int not null primary key identity(1,1),
+datumrodenja datetime not null, 
+datumdolaska datetime not null, 
+datumsmrti datetime not null 
+);
+
+create table zivotinja(
+sifra int not null primary key identity(1,1),
+vrsta varchar(50) not null, 
+ime varchar(50) not null,
+djelatnik int not null references djelatnik(sifra),
+prostorija int not null references prostorija(sifra),
+datum int not null references datum(sifra)
 );
