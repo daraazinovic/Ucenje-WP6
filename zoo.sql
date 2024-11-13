@@ -1,15 +1,23 @@
---create database zoo;
+use master;
+go
 
---drop database zoo;
+drop database if exists zoo;
+go
 
---use zoo;
+create database if exists zoo;
+go
+
+use zoo;
+go
+
+
 
 create table zivotinja(
-sifra int,
-vrsta varchar(50),
-ime varchar(50),
-djelatnik int,
-prostorija int,
+sifra int not null primary key(1,),
+vrsta varchar(50),not null,
+ime varchar(50), not null
+djelatnik int, not null
+prostorija int, not null
 datum int
 );
 
