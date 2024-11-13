@@ -1,8 +1,8 @@
 ﻿-- Ovo je SQL skripta
-
+-- prebacujem se na master bazu
 use master;
 go 
-
+--kreiram novu bazu
 drop database if exists edunovawp6;
 go
 
