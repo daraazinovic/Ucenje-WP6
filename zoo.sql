@@ -12,3 +12,17 @@ djelatnik int,
 prostorija int,
 datum int
 );
+
+create table djelatnik(
+sifra int,
+ime varchar(50),
+prezime varchar(50),
+iban varchar(50)
+);
+
+create table prostorija(
+sifra int,
+dimenzije varchar(30),
+maksbroj int,
+mjesto varchar(30)
+);
