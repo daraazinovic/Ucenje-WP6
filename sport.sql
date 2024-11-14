@@ -3,7 +3,7 @@ go
 
 drop database if exists zoo;
 go
-
+ 
 create database sport;
 go
 
@@ -17,6 +17,7 @@ osnovan datetime not null,
 stadion varchar(30) not null,
 predsjednik varchar(30) not null,
 liga varchar(30) not null 
+);
 
 create table igrac(
 sifra int not null primary key identity(1,1),
@@ -42,7 +43,7 @@ sifra int not null primary key identity(1,1),
 datum datetime not null,
 vrijeme time not null,
 lokacija varchar(50) not null,
-stadion int not null references stadion(sifra),
+stadion int not null references klub(sifra),
 domaci_klub int not null references klub(sifra),
 gostujuci_klub int not null references klub(sifra)
 );
