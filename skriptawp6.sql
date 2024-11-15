@@ -47,3 +47,14 @@ grupa int not null references grupe(sifra),
 polaznik int not null references polaznici(sifra)
 );
 
+--1
+insert into smjerovi (naziv,cijena,izvodiseod,vaucer)
+values ('Web programirenje',1225.48,'2024-11-06 17:00',1);
+
+insert into smjerovi(naziv, cijena, izvodiseod, vaucer)
+values
+--2
+('Java programiranje',null,null,null),
+--3
+('Serviseri',800,'2020-01-01',0);
+
