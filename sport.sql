@@ -33,7 +33,7 @@ create table trener(
 sifra int not null primary key identity(1,1),
 ime varchar(30)not null,
 prezime varchar(30)not null,
-klub varchar(30)not null,
+klub int not null references klub(sifra), 
 nacionalnost varchar(30)not null,
 iskustvo int not null
 );
